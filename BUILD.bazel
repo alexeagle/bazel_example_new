@@ -1,0 +1,9 @@
+# Allow users to `bazel run :install`
+# This might be a nice idiom to establish among bazel users, to simplify the command run,
+# and to abstract away whether a given project uses yarn or npm.
+alias(
+    name = "install",
+    actual = "@yarn//:yarn"
+)
+
+# Maybe users should be able to `bazel run :add_dep typescript@2.7` for example too?
