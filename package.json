@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@bazel/typescript": "github:alexeagle/rules_typescript#bootstrap",
     "typescript": "^2.7.2"
   }
 }

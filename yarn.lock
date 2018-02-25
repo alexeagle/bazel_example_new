@@ -2,6 +2,16 @@
 # yarn lockfile v1
 
 
+"@bazel/javascript@github:alexeagle/rules_nodejs#bootstrap":
+  version "0.2.0"
+  resolved "https://codeload.github.com/alexeagle/rules_nodejs/tar.gz/d46be199edf35995b8b4adb13c998f491e3d71d5"
+
+"@bazel/typescript@github:alexeagle/rules_typescript#bootstrap":
+  version "0.9.0"
+  resolved "https://codeload.github.com/alexeagle/rules_typescript/tar.gz/20df2d70fd6f6ccb39d183ecd6fc1f8193718e70"
+  dependencies:
+    "@bazel/javascript" "github:alexeagle/rules_nodejs#bootstrap"
+
 typescript@^2.7.2:
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"

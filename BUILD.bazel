@@ -7,3 +7,9 @@ alias(
 )
 
 # Maybe users should be able to `bazel run :add_dep typescript@2.7` for example too?
+
+filegroup(
+    name = "node_modules",
+    srcs = glob(["node_modules/**"]),
+    visibility = ["//visibility:public"],
+)
