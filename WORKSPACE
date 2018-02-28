@@ -9,7 +9,7 @@
 # of namespacing by urls.
 # Here's a proposal to encode arbitrary npm package names in Bazel:
 # this is URI-encoding of com_npmjs:@bazel/example_new with %->__
-workspace(name = "com_npmjs__3A__40bazel__2Fexample_new") 
+workspace(name = "com_npmjs__3A__40bazel__2Fexample_new")
 # That would require that we map the workspace name whenever we use it for node resolution.
 # Within this repo I should be able to `import {} from '@bazel/example_new'` without any
 # special path mapping or module_name on a rule.
@@ -19,9 +19,9 @@ workspace(name = "com_npmjs__3A__40bazel__2Fexample_new")
 # but after that we can manage the WORKSPACE file for them.
 http_archive(
     name = "build_bazel_rules_nodejs_bootstrap",
-    url = "https://github.com/alexeagle/rules_nodejs/archive/bootstrap_published.tar.gz",
-    strip_prefix = "rules_nodejs-bootstrap_published",
-    sha256 = "2c10ab0842cc15c4e860ae733a25e2f67adb30257bc748f0317753033a38d8f1",
+    url = "https://github.com/bazelbuild/rules_nodejs/archive/bootstrap.tar.gz",
+    strip_prefix = "rules_nodejs-bootstrap",
+    sha256 = "55c01a2ef46fa00da7dcaad8768df545a861e22a8803bd19643c8ec7e3b59ff7",
 )
 load("@build_bazel_rules_nodejs_bootstrap//:defs.bzl", "node_repositories")
 node_repositories(package_json = ["//:package.json"])
@@ -29,6 +29,7 @@ node_repositories(package_json = ["//:package.json"])
 ### THAT'S THE END
 ### Unless the user is using other ecosystems (eg. scala rules) they shouldn't
 # touch this file again or care what ends up in here.
+
 #########################
 # JavaScript Bazel rules
 # This is added automatically by the postinstall script of @bazel/javascript
